@@ -10,14 +10,16 @@ http://www.springframework.org/schema/mvc
 http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
  
 	<context:component-scan base-package="com.app" />
+	<!--below line responsible for service static html pages directly  -->
+	<mvc:resources mapping="/**" location="/"/>
 	<mvc:annotation-driven />
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
-			<value>/WEB-INF/jsp/</value>
+			<value>/WEB-INF/</value>
 		</property>
 		<property name="suffix">
-			<value>.jsp</value>
+			<value>.html</value>
 		</property>
 	</bean>
 </beans>
